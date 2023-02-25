@@ -5,7 +5,7 @@
         <v-sheet class="ma-2 pb-2">
           <h1 class="mb-6">{{ product.title }}</h1>
           <p>{{ product.description }}</p>
-          <v-img class="" :src="product.image"  cover></v-img>
+          <v-img class="" :src="product.image" width="100%" cover></v-img>
         </v-sheet>
       </v-col>
     </v-row>
@@ -20,13 +20,13 @@ export default {
       products: [
         {
           title:
-            "Amizade além das espécies",
+            "Sobre",
           description:
-            "A amizade entre animais e humanos é algo que tem sido celebrado há séculos. Desde os tempos antigos, as pessoas têm criado laços estreitos com seus animais de estimação, e isso continua a ser verdade até hoje. A relação entre um animal de estimação e seu dono é um exemplo perfeito de como as diferenças de espécies podem ser superadas em nome do amor, compaixão e respeito mútuo. Os animais são conhecidos por trazer alegria e felicidade para nossas vidas, independentemente de sua espécie. A amizade entre um animal de estimação e seu dono é uma conexão inquebrável, que transcende as diferenças de espécies e se baseia na empatia e no amor incondicional. A simples presença de um animal de estimação pode trazer conforto e serenidade, e muitas pessoas consideram seus animais de estimação como membros da família.",
+            "A Pet é uma empresa dedicada à adoção de animais de estimação. Com um objetivo claro de ajudar a encontrar um lar amoroso para cada animal, a empresa se destaca por seu compromisso em garantir que todos os animais encontrem uma família responsável e carinhosa. A empresa trabalha com uma equipe altamente treinada e experiente, que garante que cada animal receba os cuidados necessários e seja bem cuidado enquanto espera por um novo lar. A Pet também fornece todos os cuidados veterinários necessários, incluindo vacinas e check-ups de saúde, garantindo que cada animal esteja em boas condições de saúde antes de ser adotado. Além disso, a I Want My oferece orientação e suporte para os novos tutores, ajudando-os a criar um ambiente seguro e amoroso para seus novos pets. A empresa também se preocupa em educar a comunidade sobre a importância da adoção responsável e do cuidado adequado dos animais. A Pet é uma empresa comprometida com a causa da adoção de animais e é a escolha ideal para quem deseja adotar um pet. Com um atendimento diferenciado e um cuidado dedicado, a empresa garante que cada animal receba o amor e o cuidado que merece e encontre um lar para sempre. Se você está procurando um novo companheiro de vida, a I Want My é a empresa que pode ajudá-lo a encontrar o seu novo melhor amigo.",
         },
         {
           image:
-            "https://imgs.search.brave.com/NvwsnGiM9nytmyIN9wL3hGOOQArGwhwFUfh6jsvxjUE/rs:fit:896:532:1/g:ce/aHR0cDovL3d3dy5h/c29tYWRldG9kb3Nh/ZmV0b3MuY29tL2Nv/bnRlbnQvdXBsb2Fk/cy8yMDE2LzA2L3Vz/dGhlbXAtY2FwYS0y/LmpwZw",
+            "https://images.pexels.com/photos/6001780/pexels-photo-6001780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         },
       ],
     };

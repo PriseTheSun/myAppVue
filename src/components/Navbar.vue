@@ -77,7 +77,6 @@ export default {
   components: {
     Carrousel,
   },
-
   created() {
     document.addEventListener("DOMContentLoaded", () => {
       const btnMobile = navbar.btnMobile;

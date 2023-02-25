@@ -4,7 +4,7 @@
       <div
         class="d-flex flex-column fill-height justify-center align-start text-white pa-16 pb-16"
       >
-        <h1 class="text-h2 font-weight-medium mb-4 title-size">
+        <h1 class="text-h2 font-weight-medium  mb-4 title-size">
           Um lar cheio de amor.
         </h1>
         <h4 class="subheading mb-7 sub-title-text">

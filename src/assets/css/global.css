@@ -1,13 +1,18 @@
 .v-window.v-theme--light.v-carousel {
-  position: relative;
+  /* position: relative;
   top: -70px;
-  z-index: -1;
+  z-index: -1; */
 }
 
 /*Opacity Parallax Image*/
 .v-parallax__image {
   filter: grayscale(60%);
   opacity: 5.9;
+}
+
+.v-card__text {
+  max-height: 100vh;
+  overflow-y: scroll;
 }
 
 /*Fade Global Effect*/

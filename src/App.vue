@@ -3,7 +3,7 @@
 <card-grid/>
 <parallax/>
 <tabs/>
-<foot-comp/>
+
 
 
 </template>
@@ -14,7 +14,6 @@ import Navbar from "@/components/Navbar.vue"
 import CardGrid from "@/components/CardGrid.vue";
 import Parallax from "./components/Parallax.vue";
 import Tabs from "@/components/Tabs.vue";
-import FootComp from "@/components/FootComp.vue";
 
 export default {
   name: 'App',
@@ -24,11 +23,6 @@ export default {
     CardGrid,
     Tabs,
     Parallax,
-    FootComp
   },
-
-  data: () => ({
-    //
-  }),
 }
 </script>
