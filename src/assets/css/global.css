@@ -1,4 +1,4 @@
-.v-window.v-theme--light.v-carousel{
+.v-window.v-theme--light.v-carousel {
   position: relative;
   top: -70px;
   z-index: -1;
@@ -35,3 +35,38 @@
     opacity: 1;
   }
 }
+
+/*Media Queries*/
+@media (max-width: 768px) {
+  /*title-carrousel*/
+  .title-size {
+    font-size: 50px !important;
+  }
+  /*sub-title-carrousel*/
+  .sub-title-text {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  .title-size {
+    font-size: 35px !important;
+  }
+  .sub-title-text {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 425px) {
+  .title_logo {
+    display: none;
+  }
+  .title-size {
+    font-size: 30px !important;
+  }
+  .sub-title-text {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 375px) {}

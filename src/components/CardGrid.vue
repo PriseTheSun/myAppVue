@@ -1,11 +1,11 @@
 <template>
   <v-container class="bg-surface-variant" height="400">
     <v-row no-gutters>
-      <v-col v-for="(product, index) in products" :key="index" cols="12" sm="6">
+      <v-col v-for="(product, index) in products" :key="index" cols="12" md="6">
         <v-sheet class="ma-2 pb-2">
           <h1 class="mb-6">{{ product.title }}</h1>
           <p>{{ product.description }}</p>
-          <v-img class="fadeIn" :src="product.image"  cover></v-img>
+          <v-img class="" :src="product.image"  cover></v-img>
         </v-sheet>
       </v-col>
     </v-row>
@@ -20,9 +20,9 @@ export default {
       products: [
         {
           title:
-            "Amizade além das espécies: a conexão inquebrável entre humanos e animais",
+            "Amizade além das espécies",
           description:
-            "A amizade entre humanos e animais é uma conexão inquebrável, que transcende as diferenças de espécies e se baseia na empatia, amor e respeito mútuo. É impressionante como os animais conseguem tocar nossos corações e trazer alegria para nossas vidas, mesmo em tempos difíceis. Desde um simples afago em um gato até a lealdade de um cão de estimação, os animais nos ensinam o verdadeiro significado do amor incondicional. Eles são nossos companheiros mais fiéis, sempre prontos para nos receber com alegria e afeto, independentemente de como estamos nos sentindo. A amizade entre humanos e animais é uma prova de que a compaixão e a empatia são valores universais, capazes de conectar seres de diferentes espécies e criar laços que duram para sempre.",
+            "A amizade entre animais e humanos é algo que tem sido celebrado há séculos. Desde os tempos antigos, as pessoas têm criado laços estreitos com seus animais de estimação, e isso continua a ser verdade até hoje. A relação entre um animal de estimação e seu dono é um exemplo perfeito de como as diferenças de espécies podem ser superadas em nome do amor, compaixão e respeito mútuo. Os animais são conhecidos por trazer alegria e felicidade para nossas vidas, independentemente de sua espécie. A amizade entre um animal de estimação e seu dono é uma conexão inquebrável, que transcende as diferenças de espécies e se baseia na empatia e no amor incondicional. A simples presença de um animal de estimação pode trazer conforto e serenidade, e muitas pessoas consideram seus animais de estimação como membros da família.",
         },
         {
           image:
