@@ -2,7 +2,7 @@
   <v-card>
     <v-tabs
       v-model="tab"
-      color="deep-purple-accent-4"
+      color="brown-darken-1"
       align-tabs="center"
     >
       <v-tab :value="1">Gatos</v-tab>
@@ -28,6 +28,7 @@
                 :lazy-src="`https://picsum.photos/10/6?image=${index}`"
                 aspect-ratio="1"
                 height="400"
+                cover
               ></v-img>
               
             </v-col>

@@ -5,7 +5,7 @@ ul {
 }
 
 a {
-  color: #FFF;
+  color: #fff;
   text-decoration: none;
   font-family: sans-serif;
 }
@@ -46,10 +46,10 @@ a:hover {
   display: none;
 }
 
-.title_logo{
-    color: #fff;
-    font-family: 'Shantell Sans', cursive;
-  }
+.title_logo {
+  color: #fff;
+  font-family: "Shantell Sans", cursive;
+}
 
 @media (max-width: 600px) {
   #menu {
@@ -90,7 +90,7 @@ a:hover {
   }
   #hamburger::after,
   #hamburger::before {
-    content: '';
+    content: "";
     display: block;
     width: 20px;
     height: 2px;
@@ -113,5 +113,11 @@ a:hover {
     color: #000;
     text-decoration: none;
     font-family: sans-serif;
+  }
+}
+
+@media (max-width: 375px) {
+  .title_logo {
+    display: none;
   }
 }
