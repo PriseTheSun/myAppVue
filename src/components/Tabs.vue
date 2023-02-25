@@ -7,11 +7,13 @@
             <v-col cols="12" md="6">
               <v-img :src="dialogImage" aspect-ratio="1" cover />
             </v-col>
-            <v-col cols="12" md="6" class="d-flex flex-column justify-center">
-              <v-btn icon @click="dialog = false" absolute top right>
-                  <v-icon>mdi-close</v-icon>
-                </v-btn>
-              <v-card-title>{{ dialogTitle }}</v-card-title>
+            <v-col cols="12" md="6" class="d-flex flex-column justify-start pd-16">
+              <v-row class="justify-space-between">
+                <v-card-title>{{ dialogTitle }}</v-card-title>
+                <v-icon icon @click="dialog = false" absolute top right
+                  >mdi-close</v-icon
+                >
+              </v-row>
               <v-card-text>{{ dialogDescription }}</v-card-text>
             </v-col>
           </v-row>
