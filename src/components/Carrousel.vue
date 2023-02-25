@@ -12,7 +12,7 @@
           peludo! <br />Dê amor e proteção a um animal abandonado e mude a vida
           dele para sempre.
         </h4>
-        <v-btn color="blue-grey-darken-1"> Adote um amigo! </v-btn>
+        <v-btn color="brown-darken-1"> Adote um amigo! </v-btn>
       </div>
     </v-carousel-item>
 
@@ -24,7 +24,7 @@
         <h4 class="subheading mb-7">
           Adote um animal e ganhe um amigo para sempre!
         </h4>
-        <v-btn color="blue-grey-darken-1"> Adote um amigo! </v-btn>
+        <v-btn color="brown-darken-1"> Adote um amigo! </v-btn>
       </div>
     </v-carousel-item>
 
@@ -39,7 +39,7 @@
           Adote um companheiro e sinta todo o carinho que só um amigo peludo
           pode oferecer!
         </h4>
-        <v-btn color="blue-grey-darken-1"> Adote um amigo! </v-btn>
+        <v-btn color="brown-darken-1"> Adote um amigo! </v-btn>
       </div>
     </v-carousel-item>
   </v-carousel>

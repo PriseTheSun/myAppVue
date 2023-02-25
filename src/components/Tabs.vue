@@ -46,12 +46,12 @@ export default {
       tab: 1,
       images: [
         [
-          "https://images.pexels.com/photos/208984/pexels-photo-208984.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-          "https://images.pexels.com/photos/3777622/pexels-photo-3777622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-          "https://picsum.photos/500/300?image=25",
-          "https://picsum.photos/500/300?image=30",
-          "https://picsum.photos/500/300?image=35",
-          "https://picsum.photos/500/300?image=40"
+          "https://images.pexels.com/photos/617278/pexels-photo-617278.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          "https://images.pexels.com/photos/177809/pexels-photo-177809.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          "https://images.pexels.com/photos/2173009/pexels-photo-2173009.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1 ",
+          "https://images.pexels.com/photos/747795/pexels-photo-747795.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          "https://images.pexels.com/photos/7140797/pexels-photo-7140797.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          "https://images.pexels.com/photos/3859933/pexels-photo-3859933.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         ],
         [
           "https://imgs.search.brave.com/TCenV15AAdyf8ahXSUXxSwfQUKnRWiVX1vwCqEZwfIg/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9waXh5/Lm9yZy9zcmMvMC8x/MDQ5LmpwZw",
@@ -62,12 +62,12 @@ export default {
           "https://images.pexels.com/photos/5958289/pexels-photo-5958289.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         ],
         [
-          "https://picsum.photos/500/300?image=75",
-          "https://picsum.photos/500/300?image=80",
-          "https://picsum.photos/500/300?image=85",
-          "https://picsum.photos/500/300?image=90",
-          "https://picsum.photos/500/300?image=95",
-          "https://picsum.photos/500/300?image=100"
+          "https://images.pexels.com/photos/33152/european-rabbits-bunnies-grass-wildlife.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          "https://images.pexels.com/photos/10780914/pexels-photo-10780914.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          "https://images.pexels.com/photos/372166/pexels-photo-372166.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          "https://images.pexels.com/photos/5152010/pexels-photo-5152010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          "https://images.pexels.com/photos/10780922/pexels-photo-10780922.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          "https://www.mulherportuguesa.com/wp-content/uploads/2016/10/coelho-selvagem.jpg"
         ]
       ]
     };

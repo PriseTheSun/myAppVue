@@ -3,9 +3,9 @@
     <v-row no-gutters>
       <v-col v-for="(product, index) in products" :key="index" cols="12" sm="6">
         <v-sheet class="ma-2 pb-2">
-          <h1>{{ product.title }}</h1>
+          <h1 class="mb-6">{{ product.title }}</h1>
           <p>{{ product.description }}</p>
-          <v-img :src="product.image"  cover></v-img>
+          <v-img class="fadeIn" :src="product.image"  cover></v-img>
         </v-sheet>
       </v-col>
     </v-row>
