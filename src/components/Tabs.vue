@@ -10,7 +10,7 @@
             <v-col cols="12" md="6" class="d-flex flex-column justify-start pd-16">
               <v-row class="justify-space-between">
                 <v-card-title>{{ dialogTitle }}</v-card-title>
-                <v-icon icon @click="dialog = false" absolute top right
+                <v-icon class="mr-3 mt-3" icon @click="dialog = false" absolute top right
                   >mdi-close</v-icon
                 >
               </v-row>
