@@ -2,8 +2,8 @@
   <v-container class="bg-surface-variant" height="400">
     <v-row no-gutters>
       <v-col v-for="(product, index) in products" :key="index" cols="12" sm="6">
-        <v-sheet class="ma-2 pa-2">
-          <h3>{{ product.title }}</h3>
+        <v-sheet class="ma-2 pb-2">
+          <h1>{{ product.title }}</h1>
           <p>{{ product.description }}</p>
           <v-img :src="product.image"  cover></v-img>
         </v-sheet>
