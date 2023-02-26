@@ -20,7 +20,7 @@
 
     <div>
       {{ new Date().getFullYear() }} — <strong>I Want my Pet</strong>
-      <a class="ml-3" href="https://netcode.dev.br/">Com<span class="mdi mdi-heart"></span> by.<strong>NetCode</strong></a>
+      <a class="ml-3" href="https://netcode.dev.br/">Com<span class="mdi mdi-heart"></span><strong>NetCode</strong></a>
     </div>
     
   </v-footer>
