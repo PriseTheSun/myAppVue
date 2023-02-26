@@ -58,7 +58,7 @@
     data() {
       return {
         showShareButtons: false,
-        pageUrl: '',
+        pageUrl: 'https://iwantmypet.netlify.app',
       };
     },
     computed: {
@@ -67,12 +67,12 @@
         return encodeURIComponent(shareUrl);
       },
       whatsappShareUrl() {
-        const shareText = encodeURIComponent(`Olá estou disponível para adoção acesse: https://app.netlify.com/sites/iwantmypet/overview ${this.pageUrl}`);
+        const shareText = encodeURIComponent(`Olá estou disponível para adoção acesse: ${this.pageUrl}`);
         return `https://web.whatsapp.com/send?text=${shareText}`;
       },
       emailShareUrl() {
         const subject = encodeURIComponent('Awesomeness!');
-        const body = encodeURIComponent(`Olá estou disponível para adoção acesse: https://app.netlify.com/sites/iwantmypet/overview ${this.pageUrl}`);
+        const body = encodeURIComponent(`Olá estou disponível para adoção acesse: ${this.pageUrl}`);
         return `mailto:?subject=${subject}&amp;body=${body}`;
       },
     },
