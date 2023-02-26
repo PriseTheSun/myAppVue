@@ -3,9 +3,6 @@
 <card-grid/>
 <parallax/>
 <tabs/>
-
-
-
 </template>
 
 <script>

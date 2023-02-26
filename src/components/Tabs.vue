@@ -25,6 +25,8 @@
                 >
               </v-row>
               <v-card-text>{{ dialogDescription }}</v-card-text>
+              <shere-btn/>
+
             </v-col>
           </v-row>
         </v-container>
@@ -61,8 +63,14 @@
 </template>
 
 <script>
+import ShereBtn from '@/components/ShereBtn.vue'
+
 export default {
   name: "TabsComponent",
+
+  components:{
+    ShereBtn,
+  },
   data() {
     return {
       tab: 1,
@@ -71,8 +79,8 @@ export default {
         [
           {
             src:"https://images.pexels.com/photos/617278/pexels-photo-617278.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            title: "Gato fofo",
-            description: "Este é um gato muito fofo."
+            title: "Olá sou: Saphira",
+            description: "Uma gata de olhos verdes e pelagem de três cores. Com personalidade carinhosa e brincalhona, ele adora passar horas se divertindo com brinquedos e explorando sua casa. Seu olhar intenso e curioso é capaz de derreter o coração de qualquer um. Não perca a chance de conhecer esse lindo felino!."
           },
           {
             src:"https://images.pexels.com/photos/177809/pexels-photo-177809.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -137,8 +145,8 @@ export default {
          [
           {
             src:"https://images.pexels.com/photos/33152/european-rabbits-bunnies-grass-wildlife.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            title: "Gato fofo",
-            description: "Este é um gato muito fofo."
+            title: "Olá sou: Saphira",
+            description: "Uma gata de olhos verdes e pelagem de três cores. Com personalidade carinhosa e brincalhona, ele adora passar horas se divertindo com brinquedos e explorando sua casa. Seu olhar intenso e curioso é capaz de derreter o coração de qualquer um. Não perca a chance de conhecer esse lindo felino!."
           },
           {
             src:"https://images.pexels.com/photos/10780914/pexels-photo-10780914.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
