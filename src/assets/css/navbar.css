@@ -20,13 +20,17 @@ a:hover {
 }
 /*Navbar Transparent Effect*/
 #header {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   box-sizing: border-box;
   height: 70px;
   padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #42362c;
+  background: #6D4C41;
   color: #fff;
 }
 
@@ -124,4 +128,3 @@ a:hover {
   }
 
 }
-

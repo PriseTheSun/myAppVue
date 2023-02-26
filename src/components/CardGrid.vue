@@ -1,5 +1,5 @@
 <template>
-  <v-container class="bg-surface-variant" height="400">
+  <v-container class="" height="400">
     <v-row no-gutters>
       <v-col v-for="(product, index) in products" :key="index" cols="12" md="6">
         <v-sheet class="ma-2 pb-2">

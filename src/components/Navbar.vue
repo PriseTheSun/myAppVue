@@ -1,8 +1,7 @@
 <template>
   <header id="header">
-    <a id="logo" class="d-flex align-center" href=""
-
-      ><svg
+    <a id="logo" class="d-flex align-center" href="">
+      <svg
         width="50px"
         height="50px"
         viewBox="0 0 400 400"
@@ -42,8 +41,7 @@
           stroke-linejoin="round"
         />
       </svg>
-      <span class="title_logo">I want my pet</span></a
-    >
+      <span class="title_logo">I want my pet</span></a>
 
     <nav id="nav">
       <button
@@ -52,6 +50,8 @@
         aria-haspopup="true"
         aria-controls="menu"
         aria-expanded="false"
+        v-on:click.prevent="toggleMenu"
+        v-on:touchstart.prevent="toggleMenu"
       >
         Menu
         <span id="hamburger"></span>
@@ -69,7 +69,6 @@
 
 <script>
 import Carrousel from "@/components/Carrousel.vue";
-import navbar from "@/helper/navbar.js";
 
 export default {
   name: "NavbarSearch",
@@ -77,13 +76,20 @@ export default {
   components: {
     Carrousel,
   },
-  created() {
-    document.addEventListener("DOMContentLoaded", () => {
-      const btnMobile = navbar.btnMobile;
-      const toggleMenu = navbar.toggleMenu;
-      btnMobile.addEventListener("click", toggleMenu);
-      btnMobile.addEventListener("touchstart", toggleMenu);
-    });
+
+  methods: {
+    toggleMenu(event) {
+      if (event.type === "touchstart") event.preventDefault();
+      const nav = document.getElementById("nav");
+      nav.classList.toggle("active");
+      const active = nav.classList.contains("active");
+      event.currentTarget.setAttribute("aria-expanded", active);
+      if (active) {
+        event.currentTarget.setAttribute("aria-label", "Fechar Menu");
+      } else {
+        event.currentTarget.setAttribute("aria-label", "Abrir Menu");
+      }
+    },
   },
 };
 </script>
