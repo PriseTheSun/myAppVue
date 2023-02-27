@@ -25,7 +25,7 @@
 
     <v-btn
       v-if="showBackToTop"
-      class="back-to-top"
+      class="back-to-top fadeIn"
       fab
       bottom
       right
