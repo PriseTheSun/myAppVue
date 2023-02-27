@@ -5,6 +5,7 @@
     <parallax />
     <tabs />
     <Foo />
+
   </v-app>
 </template>
 

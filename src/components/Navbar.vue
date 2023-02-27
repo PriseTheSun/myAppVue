@@ -58,9 +58,8 @@
       </button>
       <ul id="menu" role="menu">
         <li><a href="/">Sobre</a></li>
-        <li><a href="/">Produtos</a></li>
-        <li><a href="/">Portfólio</a></li>
         <li><a href="/">Contato</a></li>
+        <li><a href="/">Bichinhos</a></li>
       </ul>
     </nav>
   </header>

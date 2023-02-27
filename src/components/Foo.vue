@@ -22,7 +22,19 @@
       {{ new Date().getFullYear() }} — <strong>I Want my Pet</strong>
       <a class="ml-3" href="https://netcode.dev.br/">Com<span class="mdi mdi-heart"></span><strong>NetCode</strong></a>
     </div>
-    
+
+    <v-btn
+      v-if="showBackToTop"
+      class="back-to-top"
+      fab
+      bottom
+      right
+      x-small
+      color="#4E342E"
+      @click="scrollToTop"
+    >
+      <v-icon>mdi-chevron-up</v-icon>
+    </v-btn>
   </v-footer>
 </template>
 
@@ -30,29 +42,79 @@
 export default {
   name: "FooterComponent",
 
-  data: () => ({
-    icons: [
-      {
-        name: "WhatsApp",
-        icon: "mdi-whatsapp",
-        link: "https://api.whatsapp.com/send?phone=5511914810122",
-      },
-      {
-        name: "Email",
-        icon: "mdi-email",
-        link: "contato@netcode.dev.br",
-      },
-      {
-        name: "LinkedIn",
-        icon: "mdi-linkedin",
-        link: 'https://www.linkedin.com/in/araujoerik/',
-      },
-      {
-        name: "Instagram",
-        icon: "mdi-instagram",
-        link: "https://www.instagram.com/netcode.dev/",
-      },
-    ],
-  }),
+  data() {
+    return {
+      showBackToTop: false,
+
+      icons: [
+        {
+          name: "WhatsApp",
+          icon: "mdi-whatsapp",
+          link: "https://api.whatsapp.com/send?phone=5511914810122",
+        },
+        {
+          name: "Email",
+          icon: "mdi-email",
+          link: "contato@netcode.dev.br",
+        },
+        {
+          name: "LinkedIn",
+          icon: "mdi-linkedin",
+          link: "https://www.linkedin.com/in/araujoerik/",
+        },
+        {
+          name: "Instagram",
+          icon: "mdi-instagram",
+          link: "https://www.instagram.com/netcode.dev/",
+        },
+      ],
+    };
+  },
+
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+
+  unmounted() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
+
+  methods: {
+    handleScroll() {
+      const scrollTop =
+        document.documentElement.scrollTop || document.body.scrollTop;
+      const windowHeight =
+        window.innerHeight || document.documentElement.clientHeight;
+
+      if (scrollTop > windowHeight / 2) {
+        this.showBackToTop = true;
+      } else {
+        this.showBackToTop = false;
+      }
+    },
+
+    scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    },
+  },
 };
 </script>
+
+<style>
+.back-to-top {
+  position: fixed;
+  z-index: 999;
+  opacity: 0.8;
+  right: 24px;
+  bottom: 24px;
+  transition: all 0.3s ease-in-out;
+}
+
+.back-to-top:hover {
+  opacity: 1;
+  transform: translateY(-4px);
+}
+</style>
