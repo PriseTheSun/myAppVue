@@ -4,7 +4,6 @@
 ```
 npm install
 ```
-
 ### Compiles and hot-reloads for development
 ```
 npm run serve
@@ -22,3 +21,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## Project Running
+![] (https://drive.google.com/file/d/1GYqNbrGRMBTPHWc74woLpNbzrouNZ9T8/view?usp=sharing)
