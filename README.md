@@ -23,4 +23,4 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## Project Running
-![gg](https://drive.google.com/file/d/18PSQwgAgJvxCxLiNVWdT2UjNZ-mU_1qC/view?usp=sharing)
+![IWantMyPet](https://user-images.githubusercontent.com/62224609/224512991-e758065e-b34f-4817-a73a-51edb2ac4ee9.gif)
