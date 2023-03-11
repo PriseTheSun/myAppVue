@@ -24,6 +24,6 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## Project Image
-Vue.js and vuetify technologies used
+"I Want My Pet" is a fictional pet adoption company that was created using Vue.js and Vuetify along with standard web development tools like HTML, CSS and JS
 
 <section align="center"><img src="src\assets\img\IWantMyPet.gif"></section>
