@@ -26,4 +26,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ## Project Image
 Vue.js and vuetify technologies used
 
-![IWantMyPet](https://user-images.githubusercontent.com/62224609/224512991-e758065e-b34f-4817-a73a-51edb2ac4ee9.gif)
+<section align="center"><img src="src\assets\img\IWantMyPet.gif"></section>
