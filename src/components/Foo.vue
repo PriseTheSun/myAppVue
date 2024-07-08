@@ -1,4 +1,4 @@
-<template>
+ <template>
   <v-footer class="bg-brown-darken-1 text-center d-flex flex-column">
     <div>
       <v-btn
@@ -20,7 +20,7 @@
 
     <div>
       {{ new Date().getFullYear() }} — <strong>I Want my Pet</strong>
-      <a class="ml-3" href="https://netcode.dev.br/">Com<span class="mdi mdi-heart"></span><strong>NetCode</strong></a>
+      <a class="ml-3" href="https://netcode.dev.br/">Com<span class="mdi mdi-heart"></span><strong>Erik Araujo</strong></a>
     </div>
 
     <v-btn
