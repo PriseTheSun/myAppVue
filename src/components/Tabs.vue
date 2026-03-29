@@ -33,6 +33,10 @@
                   {{ currentPetCategory }}
                 </v-chip>
                 <div class="text-h5 font-weight-bold">{{ dialogTitle }}</div>
+                <div class="text-body-2 text-grey mt-1" v-if="dialogBreed">
+                  <component :is="currentPetIcon" :size="14" class="mr-1" />
+                  Raça: {{ dialogBreed }}
+                </div>
               </div>
               <v-btn icon variant="text" @click="dialog = false">
                 <X :size="24" />
@@ -60,7 +64,7 @@
                 color="success"
                 size="large"
                 block
-                :href="`https://api.whatsapp.com/send?phone=5511914810122&text=Olá! Tenho interesse no pet: ${dialogTitle}`"
+                :href="`https://api.whatsapp.com/send?phone=5511914810122&text=Olá! Tenho interesse no pet: ${dialogTitle} (${dialogBreed})`"
                 target="_blank"
                 class="mb-4"
               >
@@ -103,7 +107,7 @@
     <v-window v-model="tab">
       <v-window-item v-for="n in 3" :key="n" :value="n">
         <v-container>
-          <v-row v-if="loading">
+          <v-row v-if="loading && images[n - 1].length === 0">
             <v-col v-for="i in 6" :key="i" cols="12" sm="6" md="4">
               <v-skeleton-loader type="card" />
             </v-col>
@@ -129,6 +133,7 @@
                 </v-img>
                 <v-card-text class="text-center pt-4">
                   <h3 class="text-h6 font-weight-medium">{{ image.title }}</h3>
+                  <p class="text-caption text-grey mt-1" v-if="image.breed">{{ image.breed }}</p>
                 </v-card-text>
               </v-card>
             </v-col>
@@ -161,11 +166,12 @@ export default {
     return {
       tab: 1,
       images: [[], [], []],
-      loading: true,
+      loading: false,
       dialog: false,
       dialogImage: '',
       dialogTitle: '',
       dialogDescription: '',
+      dialogBreed: '',
       catImages: [
         'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=500&h=500&fit=crop',
         'https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=500&h=500&fit=crop',
@@ -180,7 +186,20 @@ export default {
         'https://images.unsplash.com/photo-1494256997604-768d1f608cac?w=500&h=500&fit=crop',
         'https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?w=500&h=500&fit=crop',
       ],
-      dogImages: [],
+      dogImages: [
+        'https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=500&h=500&fit=crop',
+        'https://images.unsplash.com/photo-1552053831-71594a27632d?w=500&h=500&fit=crop',
+        'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=500&h=500&fit=crop',
+        'https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=500&h=500&fit=crop',
+        'https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?w=500&h=500&fit=crop',
+        'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=500&h=500&fit=crop',
+        'https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?w=500&h=500&fit=crop',
+        'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=500&h=500&fit=crop',
+        'https://images.unsplash.com/photo-1503256207526-0d5d80fa2f47?w=500&h=500&fit=crop',
+        'https://images.unsplash.com/photo-1544568100-847a948585b9?w=500&h=500&fit=crop',
+        'https://images.unsplash.com/photo-1517849845537-4d257902454a?w=500&h=500&fit=crop',
+        'https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?w=500&h=500&fit=crop',
+      ],
       bunnyImages: [
         'https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?w=500&h=500&fit=crop',
         'https://images.unsplash.com/photo-1452857251661-2464b77dfb99?w=500&h=500&fit=crop',
@@ -200,6 +219,9 @@ export default {
         dogs: ['Thor', 'Belinha', 'Rex', 'Paçoca', 'Duke', 'Amora', 'Toby', 'Pipoca', 'Bruce', 'Mel', 'Spike', 'Bilu'],
         rabbits: ['Pipoca', 'Nuvem', 'Alfajor', 'Bolinha', 'Cenoura', 'Orelhudo', 'Neve', 'Pepita', 'Cacimba', 'Floquinho', 'Tambor', 'Pé-de-pena'],
       },
+      catBreeds: ['Persa', 'Siamês', 'British Shorthair', 'Maine Coon', 'Ragdoll', 'Angorá', ' Bengal', 'Sphynx', 'Scottish Fold', 'Munchkin', 'Exótico', 'Vira-lata'],
+      dogBreeds: ['Golden Retriever', 'Labrador', 'Poodle', 'Bulldog', 'Pastor Alemão', 'Yorkshire', 'Husky', 'Beagle', 'Rottweiler', 'Dachshund', 'Bulldog Francês', 'SRD'],
+      rabbitBreeds: ['Holland Lop', 'Lionhead', 'Angorá', 'Mini Rex', 'Holanda Anão', 'Flemish Giant', 'Lionhead', 'Mini Lop', 'Californiano', 'Nova Zelândia', 'Holanda Anão', 'Flemish Giant'],
       catDescriptions: [
         'Companheira silenciosa com olhos que dizem mais que palavras. Apreciadora de sol da tarde e sonecas longas.',
         'Brincalhona e curiosa, adora caixas e sacolas. Seu ronronar é a trilha sonora perfeita para momentos de paz.',
@@ -263,62 +285,44 @@ export default {
           this.images[0] = this.catImages.map((src, i) => ({
             src,
             title: `Olá sou: ${this.petNames.cats[i]}`,
+            breed: this.catBreeds[i],
             description: this.catDescriptions[i],
           }))
         } else if (index === 1) {
-          if (this.dogImages.length === 0) {
-            this.fetchDogs(index)
-          } else {
-            this.images[1] = this.dogImages
-            this.loading = false
-          }
+          this.images[1] = this.dogImages.map((src, i) => ({
+            src,
+            title: `Olá sou: ${this.petNames.dogs[i]}`,
+            breed: this.dogBreeds[i],
+            description: this.dogDescriptions[i],
+          }))
         } else {
           this.images[2] = this.bunnyImages.map((src, i) => ({
             src,
             title: `Olá, sou: ${this.petNames.rabbits[i]}`,
+            breed: this.rabbitBreeds[i],
             description: this.rabbitDescriptions[i],
           }))
-          this.loading = false
         }
-      }, 300)
-    },
-    async fetchDogs() {
-      try {
-        const response = await fetch('https://dog.ceo/api/breeds/image/random/12')
-        const data = await response.json()
-        if (data.status === 'success') {
-          this.dogImages = data.message.map((url, i) => ({
-            src: url,
-            title: `Olá sou: ${this.petNames.dogs[i]}`,
-            description: this.dogDescriptions[i],
-          }))
-          this.images[1] = this.dogImages
-        }
-      } catch (error) {
-        console.error('Error fetching dogs:', error)
-        this.images[1] = []
-      } finally {
         this.loading = false
-      }
+      }, 300)
     },
     openDialog(image, tabIndex) {
       this.dialog = true
       this.dialogImage = image.src
       this.dialogTitle = image.title
       this.dialogDescription = image.description
-      if (tabIndex !== undefined) {
-        this.tab = tabIndex + 1
-      }
+      this.dialogBreed = image.breed || ''
+      this.tab = tabIndex + 1
     },
   },
   computed: {
     currentPetIcon() {
-      const icons = [Cat, Dog, Rabbit]
-      return icons[this.tab - 1] || Cat
+      const icons = { 1: Cat, 2: Dog, 3: Rabbit }
+      return icons[this.tab] || Cat
     },
     currentPetCategory() {
-      const categories = ['Gato', 'Cachorro', 'Coelho']
-      return categories[this.tab - 1] || 'Pet'
+      const categories = { 1: 'Gato', 2: 'Cachorro', 3: 'Coelho' }
+      return categories[this.tab] || 'Pet'
     },
   },
 }
