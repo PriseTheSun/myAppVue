@@ -1,96 +1,135 @@
 <template>
-    <div class="share-button">
-      <v-tooltip bottom>
+  <div class="share-button">
+    <v-tooltip bottom>
+      <template v-slot:activator="{ on }">
+        <v-btn
+          fab
+          dark
+          color="brown-darken-1"
+          v-on="on"
+          @click="showShareButtons = !showShareButtons"
+        >
+          <Share2 v-if="!showShareButtons" :size="20" />
+          <X v-else :size="20" />
+        </v-btn>
+      </template>
+      <span>{{ showShareButtons ? 'Fechar' : 'Compartilhar' }}</span>
+    </v-tooltip>
+
+    <div class="share-buttons" v-if="showShareButtons">
+      <v-tooltip top>
         <template v-slot:activator="{ on }">
           <v-btn
             fab
             dark
-            color="brown-darken-1"
+            color="blue darken-4"
+            size="small"
             v-on="on"
-            @click="showShareButtons = !showShareButtons"
+            :href="facebookShareUrl"
+            target="_blank"
           >
-            <v-icon v-if="!showShareButtons">mdi-share-variant</v-icon>
-            <v-icon v-else>mdi-close</v-icon>
+            <Facebook :size="18" />
           </v-btn>
         </template>
-        <span>{{ showShareButtons ? 'Fechar' : 'Compartilhar' }}</span>
+        <span>Facebook</span>
       </v-tooltip>
-  
-      <div class="share-buttons" v-if="showShareButtons">
-        <v-btn
-          fab
-          dark
-          color="blue darken-4"
-          small
-          :href="facebookShareUrl"
-          target="_blank"
-        >
-          <v-icon>mdi-facebook</v-icon>
-        </v-btn>
-  
-        <v-btn
-          fab
-          dark
-          color="green darken-4"
-          small
-          :href="whatsappShareUrl"
-          target="_blank"
-        >
-          <v-icon>mdi-whatsapp</v-icon>
-        </v-btn>
-  
-        <v-btn
-          fab
-          dark
-          color="red darken-2"
-          small
-          :href="emailShareUrl"
-          target="_blank"
-        >
-          <v-icon>mdi-email</v-icon>
-        </v-btn>
-      </div>
+
+      <v-tooltip top>
+        <template v-slot:activator="{ on }">
+          <v-btn
+            fab
+            dark
+            color="green darken-4"
+            size="small"
+            v-on="on"
+            :href="whatsappShareUrl"
+            target="_blank"
+          >
+            <MessageCircle :size="18" />
+          </v-btn>
+        </template>
+        <span>WhatsApp</span>
+      </v-tooltip>
+
+      <v-tooltip top>
+        <template v-slot:activator="{ on }">
+          <v-btn
+            fab
+            dark
+            color="red darken-2"
+            size="small"
+            v-on="on"
+            :href="emailShareUrl"
+            target="_blank"
+          >
+            <Mail :size="18" />
+          </v-btn>
+        </template>
+        <span>E-mail</span>
+      </v-tooltip>
     </div>
-  </template>
-  
-  <script>
-  export default {
-    data() {
-      return {
-        showShareButtons: false,
-        pageUrl: 'https://iwantmypet.netlify.app',
-      };
+  </div>
+</template>
+
+<script>
+import { Share2, X, Facebook, MessageCircle, Mail } from 'lucide-vue-next'
+
+export default {
+  name: 'ShareBtn',
+  components: {
+    Share2,
+    X,
+    Facebook,
+    MessageCircle,
+    Mail,
+  },
+  data() {
+    return {
+      showShareButtons: false,
+      pageUrl: 'https://iwantmypet.netlify.app',
+    }
+  },
+  computed: {
+    facebookShareUrl() {
+      return `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(this.pageUrl)}`
     },
-    computed: {
-      facebookShareUrl() {
-        const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${this.pageUrl}`;
-        return encodeURIComponent(shareUrl);
-      },
-      whatsappShareUrl() {
-        const shareText = encodeURIComponent(`Olá estou disponível para adoção acesse: ${this.pageUrl}`);
-        return `https://web.whatsapp.com/send?text=${shareText}`;
-      },
-      emailShareUrl() {
-        const subject = encodeURIComponent('Awesomeness!');
-        const body = encodeURIComponent(`Olá estou disponível para adoção acesse: ${this.pageUrl}`);
-        return `mailto:?subject=${subject}&amp;body=${body}`;
-      },
+    whatsappShareUrl() {
+      const text = encodeURIComponent(`Olá, estou disponível para adoção! Acesse: ${this.pageUrl}`)
+      return `https://web.whatsapp.com/send?text=${text}`
     },
-  };
-  </script>
-  
-  <style scoped>
-  .share-button {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: flex-end;
+    emailShareUrl() {
+      const subject = encodeURIComponent('Pet disponível para adoção!')
+      const body = encodeURIComponent(`Olá, estou disponível para adoção! Acesse: ${this.pageUrl}`)
+      return `mailto:?subject=${subject}&body=${body}`
+    },
+  },
+}
+</script>
+
+<style scoped>
+.share-button {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.share-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
   }
-  
-  .share-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2px;
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
-  </style>
-  
+}
+</style>
